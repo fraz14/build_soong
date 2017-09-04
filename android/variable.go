@@ -88,7 +88,7 @@ type variableProperties struct {
 			Cppflags []string
 		}
 		// include validus variables
-		*android.Product_variables
+		Validus android.Product_variables
 
 	} `android:"arch_variant"`
 }
@@ -157,7 +157,7 @@ type productVariables struct {
 	Override_rs_driver *string `json:",omitempty"`
 
 	// include validus variables
-	*android.ProductVariables
+	Validus android.ProductVariables
 }
 
 func boolPtr(v bool) *bool {
