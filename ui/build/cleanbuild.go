@@ -50,6 +50,12 @@ func dataClean(ctx Context, config Config, what int) {
 	removeGlobs(ctx, filepath.Join(config.ProductOut(), "data", "*"))
 }
 
+// novoClean deletes all of the installed files -- out/target
+func novoClean(ctx Context, config Config, what int) {
+	removeGlobs(ctx, filepath.Join(config.OutDir(), "target"))
+	ctx.Println("out/target directory removed.")
+}
+
 // installClean deletes all of the installed files -- the intent is to remove
 // files that may no longer be installed, either because the user previously
 // installed them, or they were previously installed by default but no longer

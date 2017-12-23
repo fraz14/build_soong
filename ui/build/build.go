@@ -140,6 +140,10 @@ func Build(ctx Context, config Config, what int) {
 		dataClean(ctx, config, what)
 		ctx.Println("Deleted data files.")
 		return
+	} else if inList("novo", config.Arguments()) {
+		novoClean(ctx, config, what)
+		ctx.Println("Deleted all target files.")
+		return
 	}
 
 	if what&BuildSoong != 0 {
